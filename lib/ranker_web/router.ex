@@ -17,6 +17,9 @@ defmodule RankerWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/players/new", PlayerController, :new
+    post "/players", PlayerController, :create
+    get "/players", PlayerController, :index
   end
 
   # Other scopes may use custom stacks.

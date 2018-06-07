@@ -1,0 +1,16 @@
+<h5>Players</h5>
+
+<ul class="collection">
+  <%= for player <- @players do %>
+    <li class="collection-item">
+      <%= player.name %>
+      <%= player.rank %>
+    </li>
+  <% end %>
+</ul>
+
+<div class="fixed-action-btn">
+  <%= link to: player_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light red" do %>
+    <i class="material-icons">add</i>
+  <% end %>
+</div>

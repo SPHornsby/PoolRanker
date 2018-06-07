@@ -1,0 +1,16 @@
+defmodule Ranker.Player do
+  use Ecto.Schema
+  import Ecto.Changeset
+
+  schema "players" do
+    field :name, :string
+    field :rank, :integer
+  end
+
+  @doc false
+  def changeset(struct, attrs \\ %{}) do
+    struct
+    |> cast(attrs, [:name, :rank])
+    |> validate_required([:name, :rank])
+  end
+end
